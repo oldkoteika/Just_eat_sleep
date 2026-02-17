@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -25,7 +26,13 @@ void main() async {
   try {
     await dotenv.load(fileName: 'assets/.env');
   } catch (_) {
-    // assets/.env не загружен (500 на Web, нет файла) — конфиг только из --dart-define
+    // assets/.env не загружен (нет файла на этом компьютере / Web) — конфиг только из --dart-define
+    if (kDebugMode) {
+      debugPrint(
+        '⚠️ assets/.env не найден. Скопируйте assets/.env из другого компьютера '
+        'или создайте из .env.example (SUPABASE_URL, SUPABASE_ANON_KEY).',
+      );
+    }
   }
   await Hive.initFlutter();
   if (SupabaseConfig.isConfigured) {
