@@ -45,6 +45,8 @@
 	<string>Вход в приложение по Face ID для быстрого и безопасного доступа.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Приложение использует камеру для установки фото профиля.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Приложение использует микрофон при сканировании QR-кодов и для медиафункций.</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>Приложение добавляет тренировки в календарь для напоминаний.</string>
 	<key>NSContactsUsageDescription</key>
@@ -53,5 +55,20 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UISceneConfigurations</key>
+		<dict>
+			<key>UIWindowSceneSessionRoleApplication</key>
+			<array>
+				<dict>
+					<key>UISceneConfigurationName</key>
+					<string>Default Configuration</string>
+					<key>UISceneDelegateClassName</key>
+					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
 </dict>
 </plist>
